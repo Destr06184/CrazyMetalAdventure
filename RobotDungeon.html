@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Dungeon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Стартовый экран -->
+    <!-- Этот экран отображается при загрузке страницы и содержит кнопку для начала игры. -->
+    <div id="start-screen">
+        <!-- Фоновое изображение для стартового экрана -->
+        <img id="start-background" src="assets/Title_V2.gif" alt="Start Background">
+        <!-- Изображение игрока на стартовом экране -->
+        <img id="start-player" src="assets/Bouncing_Bobbo.gif" alt="Start Player">
+        <h1></h1>
+        <!-- Кнопка для начала игры -->
+        <button id="start-button">Начать игру</button>
+    </div>
+
+    <!-- Игровой экран -->
+    <!-- Этот экран отображается во время игры и содержит игровые элементы. -->
+    <div id="game" style="display: none;">
+        <!-- Счетчик пройденных сцен -->
+        <div id="score-counter">Пройдено сцен: 0</div>
+        <!-- Фоновое изображение для игрового экрана -->
+        <img id="background" src="" alt="Background">
+        <!-- Изображение игрока -->
+        <img id="player" src="assets/player/Bobbo v3.webp" alt="Player">
+
+        <!-- Противник и таймер -->
+        <!-- Изображение противника, которое появляется случайным образом -->
+        <img id="enemy" src="assets/Drill5.png" alt="Enemy" style="display: none;">
+        <!-- Таймер, который отображается рядом с противником -->
+        <div id="enemy-timer" style="display: none;">5</div>
+    </div>
+
+    <!-- Экран победы -->
+    <!-- Этот экран отображается, когда игрок выигрывает. -->
+    <div id="win-screen" style="display: none;">
+        <h1>You Won!</h1>
+        <!-- Изображение танцующего игрока на экране победы -->
+        <img id="win-player" src="assets/win/Bobby_dancing.gif" alt="Bobby_dancing.gif" style="width: 180px; height: 230px;">
+        <!-- Кнопка для перезапуска игры -->
+        <button id="restart-win-button">Играть снова</button>
+    </div>
+
+    <!-- Экран поражения -->
+    <!-- Этот экран отображается, когда игрок проигрывает. -->
+    <div id="lose-screen" style="display: none;">
+        <h1>Game Over</h1>
+        <!-- Изображение поверженного игрока на экране поражения -->
+        <img id="lose-player" src="assets/lose/Bobby_dead.gif" alt="Bobby_dead.gif" style="width: 180px; height: 160px;">
+        <!-- Кнопка для перезапуска игры -->
+        <button id="restart-lose-button">Играть снова</button>
+    </div>
+
+    <!-- Подключение скрипта игры -->
+    <script src="script.js"></script>
+</body>
+</html>

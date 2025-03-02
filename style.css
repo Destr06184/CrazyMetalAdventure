@@ -1,0 +1,218 @@
+/* Общие стили для всех экранов */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Черный фон */
+    color: #fff; /* Белый текст */
+    font-family: Arial, sans-serif; /* Шрифт */
+}
+
+/* Стили для стартового, победного и проигрышного экранов */
+#start-screen, #win-screen, #lose-screen {
+    text-align: center; /* Центрирование текста */
+}
+
+/* Стили для заголовков на разных экранах */
+#start-screen h1, #win-screen h1, #lose-screen h1 {
+    font-size: 48px; /* Размер шрифта для заголовков */
+    margin-top: 20%; /* Отступ сверху */
+}
+
+/* Стили для кнопок на разных экранах */
+#start-screen button, #win-screen button, #lose-screen button {
+    font-size: 24px; /* Размер шрифта для кнопок */
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #fff; /* Белый фон кнопки */
+    color: #000; /* Черный текст кнопки */
+    border: none; /* Убираем границу */
+    cursor: pointer; /* Курсор при наведении */
+    margin-top: 20%; /* Отступ сверху */
+}
+
+/* Эффект при наведении на кнопки */
+#start-screen button:hover, #win-screen button:hover, #lose-screen button:hover {
+    background-color: #ddd; /* Светло-серый фон при наведении */
+}
+
+/* Стили для игрового экрана */
+#game {
+    position: relative; /* Относительное позиционирование */
+    max-width: 100%; /* Ограничиваем максимальную ширину */
+    max-height: 100%; /* Ограничиваем максимальную высоту */
+    overflow: hidden; /* Скрываем выходящие за пределы элементы */
+    background-color: #000; /* Черный фон, если нет картинки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для фонового изображения */
+#background {
+    max-width: 100%; /* Ограничиваем максимальную ширину */
+    max-height: 100%; /* Ограничиваем максимальную высоту */
+    object-fit: cover; /* Покрываем всю доступную область */
+    display: none; /* Скрываем по умолчанию */
+}
+
+/* Показываем фоновое изображение, если оно есть */
+#background.visible {
+    display: block; /* Показываем, если есть картинка */
+}
+
+/* Стили для игрока */
+#player {
+    position: absolute; /* Абсолютное позиционирование */
+    width: 180px; /* Размер игрока: 180x230 */
+    height: 230px;
+    bottom: 20px; /* Позиция снизу */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Смещение для центрирования */
+    transition: left 0.5s, top 0.5s; /* Плавное перемещение */
+}
+
+/* Стили для путей */
+.path {
+    position: absolute; /* Абсолютное позиционирование */
+    width: 120px; /* Ширина кликабельной области */
+    height: 60px; /* Высота кликабельной области */
+    background-color: rgba(255, 255, 255, 0.3); /* Полупрозрачный белый фон */
+    border: 2px solid #fff; /* Белая рамка */
+    border-radius: 10px; /* Закругленные углы */
+    cursor: pointer; /* Курсор при наведении */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px; /* Размер шрифта для надписи */
+    color: #fff; /* Белый текст */
+    transition: background-color 0.3s; /* Плавное изменение фона */
+}
+
+/* Эффект при наведении на путь */
+.path:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Полупрозрачный белый фон при наведении */
+}
+
+/* Стили для счетчика пройденных сцен */
+#score-counter {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 100px; /* Позиция сверху */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translateX(-50%); /* Смещение для центрирования */
+    font-size: 24px; /* Размер шрифта */
+    color: #fff; /* Белый текст */
+    z-index: 10; /* Чтобы счетчик был поверх других элементов */
+}
+
+/* Стили для экранов победы и поражения */
+#win-screen, #lose-screen {
+    text-align: center; /* Центрирование текста */
+}
+
+/* Стили для заголовков на экранах победы и поражения */
+#win-screen h1, #lose-screen h1 {
+    font-size: 48px; /* Размер шрифта для заголовков */
+    margin-top: 20%; /* Отступ сверху */
+}
+
+/* Стили для кнопок на экранах победы и поражения */
+#win-screen button, #lose-screen button {
+    font-size: 24px; /* Размер шрифта для кнопок */
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #fff; /* Белый фон кнопки */
+    color: #000; /* Черный текст кнопки */
+    border: none; /* Убираем границу */
+    cursor: pointer; /* Курсор при наведении */
+    margin-top: 20%; /* Отступ сверху */
+}
+
+/* Эффект при наведении на кнопки на экранах победы и поражения */
+#win-screen button:hover, #lose-screen button:hover {
+    background-color: #ddd; /* Светло-серый фон при наведении */
+}
+
+/* Стили для спрайтов игрока на экранах победы и поражения */
+#win-player, #lose-player {
+    margin-top: 20px; /* Отступ сверху для спрайтов */
+}
+
+/* Стили для стартового экрана */
+#start-screen {
+    position: relative; /* Относительное позиционирование */
+    width: 100vw; /* Ширина на весь экран */
+    height: 100vh; /* Высота на весь экран */
+    overflow: hidden; /* Скрываем выходящие за пределы элементы */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Стили для фонового изображения на стартовом экране */
+#start-background {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 50%; /* Центрирование по вертикали */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* Смещение для центрирования */
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Подгоняем изображение под размеры контейнера */
+    z-index: -1; /* Помещаем задник на задний план */
+}
+
+/* Стили для спрайта игрока на стартовом экране */
+#start-player {
+    width: 150px; /* Размер спрайта персонажа */
+    height: 170px;
+    margin-bottom: 50px; /* Отступ снизу */
+    z-index: 1; /* Помещаем спрайт на передний план */
+}
+
+/* Стили для заголовка на стартовом экране */
+#start-screen h1 {
+    font-size: 48px; /* Размер шрифта для заголовка */
+    color: #fff; /* Белый текст */
+    z-index: 1; /* Помещаем текст на передний план */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+/* Стили для кнопки на стартовом экране */
+#start-screen button {
+    font-size: 24px; /* Размер шрифта для кнопки */
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #fff; /* Белый фон кнопки */
+    color: #000; /* Черный текст кнопки */
+    border: none; /* Убираем границу */
+    cursor: pointer; /* Курсор при наведении */
+    margin-top: 500px; /* Отступ сверху */
+    z-index: 1; /* Помещаем кнопку на передний план */
+}
+
+/* Эффект при наведении на кнопку на стартовом экране */
+#start-screen button:hover {
+    background-color: #ddd; /* Светло-серый фон при наведении */
+}
+
+/* Стили для противника */
+#enemy {
+    position: absolute; /* Абсолютное позиционирование */
+    width: 100px; /* Размер спрайта */
+    height: 100px;
+    cursor: pointer; /* Курсор при наведении */
+    display: none; /* Скрыт по умолчанию */
+}
+
+/* Стили для таймера */
+#enemy-timer {
+    position: absolute; /* Абсолютное позиционирование */
+    color: red; /* Красный цвет текста */
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    display: none; /* Скрыт по умолчанию */
+}
